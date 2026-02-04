@@ -1,0 +1,33 @@
+meta {
+  name: SignIn
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{HOST_AUTH}}/sign-in
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username":"admin@admin.com",
+    "password":"Deadldu22$"
+  }
+}
+
+script:post-response {
+  const token = res?.body?.data?.accessToken;
+  const refreshToken = res?.body?.data?.refreshToken;
+  const userId = res?.body?.data?.auth?.id;
+  
+  bru.setEnvVar('ACCESS_TOKEN', token);
+  bru.setEnvVar('REFRESH_TOKEN', refreshToken);
+  bru.setEnvVar('USER_ID', userId);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

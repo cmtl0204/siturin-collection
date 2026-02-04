@@ -1,0 +1,42 @@
+meta {
+  name: Create Security Questions
+  type: http
+  seq: 7
+}
+
+post {
+  url: {{HOST_AUTH}}/security-questions
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{ACCESS_TOKEN}}
+}
+
+body:json {
+  {
+      "securityQuestions": [
+          {
+              "code": "1",
+              "question": "Primera pregunta",
+              "answer": "a"
+          },
+          {
+              "code": "2",
+              "question": "Segunda pregunta",
+              "answer": "b"
+          },
+          {
+              "code": "3",
+              "question": "Tercera pregunta",
+              "answer": "c"
+          }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

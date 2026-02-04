@@ -1,0 +1,48 @@
+meta {
+  name: SignUp External
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{HOST_AUTH}}/sign-up-external
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{ACCESS_TOKEN}}
+}
+
+body:json {
+  {
+      "email": "asd@adsa.asdasd",
+      "password": "Deadldu22!",
+      "name": "qweqw",
+      "username": "1724909425",
+      "termsAcceptedAt": true,
+      "identification": "1724909448",
+      "securityQuestions": [
+          {
+              "code": "1",
+              "question": "Primera pregunta",
+              "answer": "a"
+          },
+          {
+              "code": "2",
+              "question": "Segunda pregunta",
+              "answer": "b"
+          },
+          {
+              "code": "3",
+              "question": "Tercera pregunta",
+              "answer": "c"
+          }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

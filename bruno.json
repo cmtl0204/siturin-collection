@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "siturin-collection",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

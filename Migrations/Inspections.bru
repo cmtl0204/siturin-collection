@@ -1,0 +1,16 @@
+meta {
+  name: Inspections
+  type: http
+  seq: 32
+}
+
+post {
+  url: {{HOST}}/migrations/inspections
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

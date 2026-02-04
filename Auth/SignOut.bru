@@ -1,0 +1,26 @@
+meta {
+  name: SignOut
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{HOST_AUTH}}/sign-out
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{ACCESS_TOKEN}}
+}
+
+script:post-response {
+  const token = res?.body?.data?.accessToken;
+  
+  bru.setEnvVar('ACCESS_TOKEN', token);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

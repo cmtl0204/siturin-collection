@@ -1,0 +1,16 @@
+meta {
+  name: Internal Zonal Users
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{HOST}}/migrations/internal-zonal-users
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
