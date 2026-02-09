@@ -1,11 +1,11 @@
 meta {
-  name: Internal DPA Users
+  name: Update Catalogues
   type: http
-  seq: 8
+  seq: 2
 }
 
-post {
-  url: {{HOST}}/migrations/internal-dpa-users
+patch {
+  url: {{HOST}}/migrations/catalogues
   body: none
   auth: inherit
 }
