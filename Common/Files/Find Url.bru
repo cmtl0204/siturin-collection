@@ -1,0 +1,20 @@
+meta {
+  name: Find Url
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{HOST_COMMON}}/files/1/url
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{ACCESS_TOKEN}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -4,12 +4,25 @@ meta {
   seq: 1
 }
 
-get {
-  url: 
-  body: none
-  auth: inherit
+post {
+  url: {{HOST_COMMON}}/files/e21086a7-3551-48ae-a00f-a5fd43462ad0/upload?folder=crendentials
+  body: multipartForm
+  auth: bearer
+}
+
+params:query {
+  folder: crendentials
+}
+
+auth:bearer {
+  token: {{ACCESS_TOKEN}}
+}
+
+body:multipart-form {
+  file: @file(/home/cmtl/Downloads/permisoCirculacionPDE2051.pdf)
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }
