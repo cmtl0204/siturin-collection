@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: {{HOST}}/greet-private
+  url: {{HOST}}/greet-private?greet=asdasd
   body: none
   auth: bearer
+}
+
+params:query {
+  greet: asdasd
 }
 
 auth:bearer {
