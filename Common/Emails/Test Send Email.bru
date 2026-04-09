@@ -6,8 +6,15 @@ meta {
 
 post {
   url: {{HOST_COMMON}}/mails/test
-  body: none
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "to":"test@gmail.com",
+    "message":"Test"
+  }
 }
 
 settings {
