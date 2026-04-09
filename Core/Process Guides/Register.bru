@@ -1,0 +1,49 @@
+meta {
+  name: Register
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{HOST_CORE}}/external/process-guides/registrations
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{ACCESS_TOKEN}}
+}
+
+body:multipart-form {
+  payload: '''
+    {
+        "establishment": {
+            "id": "3af30b62-82f6-4b10-8441-0ce506158768",
+            "provinceId": "84ca617c-f85c-4b77-a7bd-877e83051de7",
+            "cantonId": "b7d85343-f0d5-4ff0-b6f8-2b45f8675a29",
+            "parishId": "0c78bfc7-5efa-4fb9-8e41-2e494d191352",
+            "mainStreet": "Calle Principal 1",
+            "numberStreet": "Numero 1-1",
+            "secondaryStreet": "Calle Intersección 1",
+            "referenceStreet": "Referencia de ubicación",
+            "latitude": -0.23137777348657163,
+            "longitude": -78.52149102430214
+        },
+        "user": {
+            "hasDisability": false,
+            "bloodTypeId": "07c58a35-eabc-4efe-9bb8-328ce2768424",
+            "phone": "0997654321",
+            "secondaryPhone": "1234567890",
+            "email": "desarrollo@desarrollo.com"
+        }
+    }
+  '''
+  abc123: @file(C:\Users\nparedes\Downloads\20260316_tasa_interés_mora_tributaria_2do_trim_20260297062001774989302.pdf)
+  abc124: @file(C:\Users\nparedes\Downloads\MPCEI-DF-2026-0611-M.pdf)
+  xyz123: @file(C:\Users\nparedes\Downloads\MPCEI-DF-2026-0611-M.pdf)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

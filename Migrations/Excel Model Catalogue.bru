@@ -1,0 +1,20 @@
+meta {
+  name: Excel Model Catalogue
+  type: http
+  seq: 42
+}
+
+post {
+  url: {{HOST}}/migrations/excel-model-catalogues
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  file: @file(C:\Users\nparedes\Downloads\catalogues (4).xlsx)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
