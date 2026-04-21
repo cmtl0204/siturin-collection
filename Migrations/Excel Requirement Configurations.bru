@@ -1,0 +1,20 @@
+meta {
+  name: Excel Requirement Configurations
+  type: http
+  seq: 43
+}
+
+post {
+  url: {{HOST}}/migrations/excel-requirement-configurations
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  file: @file(C:\Users\cesar.tamayo\Downloads\catalogues (1).xlsx)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

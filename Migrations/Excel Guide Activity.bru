@@ -1,0 +1,20 @@
+meta {
+  name: Excel Guide Activity
+  type: http
+  seq: 41
+}
+
+post {
+  url: {{HOST}}/migrations/excel-guide-activities
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  file: 
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
