@@ -1,0 +1,24 @@
+meta {
+  name: Test Send Email Attach
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{HOST_COMMON}}/mails/test/attachments?q1=asdas
+  body: multipartForm
+  auth: inherit
+}
+
+params:query {
+  q1: asdas
+}
+
+body:multipart-form {
+  to: test@gmail.com
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
